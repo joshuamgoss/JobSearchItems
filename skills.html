@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Resume - Skills Details</title>
+    <script type='text/babel' src='/skilldata.js'></script>
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    <script type="text/babel" src="consistentelements.js"></script>
+
+</head>
+
+<body>
+    <div id="root"></div>
+
+
+
+    <script type="text/babel">
+    /*
+    props:
+        divID - append a # to the string for divID and pass it as the data-target
+        imgCount - an integer representing how many slides need to be made 
+    */
+    function CarouselIndicators(props){
+        var target = "#"+props.divID
+        var targetList = [<li data-target={target} data-slide-to="0" className="active"></li>]
+        for (var i = 1; i < props.imgCount; i++){
+            targetList.push(<li data-target={target} data-slide-to={""+i}></li>)
+        }
+        
+        return(
+            <ol className="carousel-indicators">
+                {targetList}
+            </ol>
+        )
+    }
+
+    /*
+    props:
+        imgFiles - an array containing the 'href' and 'text' items for the individual slides
+    */
+    function CarouselSlide(props){
+        var firstSlide = props.imgFiles.shift()
+        var innerInactiveItems = props.imgFiles.map((item)=>{
+            return(
+                <div className="carousel-item">
+                    <img style = {{objectFit:"contain"}} className="d-block w-100" src={item.href} alt={item.text}/>
+                    <div className='carousel-caption d-none d-md-block'><h5>{item.text}</h5></div>
+                </div>
+            )
+        })
+        console.log(innerInactiveItems)
+        return(
+            <div className="carousel-inner">
+                <div className="carousel-item active">
+                    <img style = {{objectFit:"contain"}} className="d-block w-100" src={firstSlide.href} alt={firstSlide.text}/>
+                    <div className='carousel-caption d-none d-md-block'><h5>{firstSlide.text}</h5></div>
+                </div>
+                {innerInactiveItems}
+            </div>
+        )
+    }
+
+    /*
+    The top level item for creating an image carousel
+    Props:
+        divID - to be used as the unique div id     - 
+        imgFiles                                    - contains 'href' and 'text' to be used in carousel items
+        
+    */
+    function ImageCarousel(props){
+        console.log(props.divID)
+        var id = props.title
+        var target = "#"+props.divID
+        var imgCount = props.imgFiles.length
+
+        return(
+            <div id={props.divID} className="carousel slide" data-ride="carousel">
+                <CarouselIndicators divID = {props.divID} imgCount = {imgCount}/>
+                <CarouselSlide imgFiles = {props.imgFiles}/>
+                <a className="carousel-control-prev" href={target} role="button" data-slide="prev">
+                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span className="sr-only">Previous</span>
+                </a>
+                <a className="carousel-control-next" href={target} role="button" data-slide="next">
+                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span className="sr-only">Next</span>
+                </a>
+                <br/>
+            </div>
+        )
+    }
+ 
+    function SkillDetailPanel(props){
+        return(
+            <div className='container col-sm-12 col-lg-6'>
+                <h3>{props.data.title}</h3>
+                <p>{props.data.description}</p>
+                <ImageCarousel divID={props.data.id} imgFiles={props.data.imgFiles} />
+            </div>
+        )
+    }
+
+    function SkillPanes(props){
+        var panels = props.skillItems.map((item)=>{
+            return <SkillDetailPanel data = {item}/>
+        })
+        return(
+            <div className='container'>
+            <div className='row'>{panels}</div>
+            </div>
+        )
+    }
+
+
+    ReactDOM.render(
+        <div>
+        <Header />
+        <Menu />
+        <SkillPanes skillItems = {skills} />
+        </div>,
+        document.getElementById('root')
+    )
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

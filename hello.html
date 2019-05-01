@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Resume - Main Page</title>
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    <script type="text/babel" src="consistentelements.js"></script>
+
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+    function SectionHeading(params){
+        
+        return(
+            <h1>{params.text}</h1>
+        )
+    }
+
+    function LeftFlushList(params){
+        var style = {fontWeight:"bold", fontSize:"1.1em"}
+        var list = params.skillList.map((item)=>{
+            return <li className="list-group-item">{item}</li>
+        })
+        return(
+            <div>    
+                <span style={style}>{params.type}</span>
+                <ul className="list-group">
+                   {list} 
+                </ul>
+            </div>   
+        )
+    }
+
+    function TwoColumnList(params){
+        var left = true
+        var leftList=[]
+        var rightList=[]
+        for (var i = 0; i < params.skillList.length; i++){
+            if (left) leftList.push(params.skillList[i])
+            else rightList.push(params.skillList[i])
+            left = !left
+        }
+        var lList = leftList.map((item)=>{
+            return <li>{item}</li>
+        })
+        var rList = rightList.map((item)=>{
+            return <li>{item}</li>
+        })
+        return(
+            <div className="row">
+                <div className='col-xs-12 col-md-6'><ul>{lList}</ul></div>
+                <div className='col-xs-12 col-md-6'><ul>{rList}</ul></div>
+            </div>
+        )
+    }
+
+    function Organization(params){
+        var rStyle = {textAlign:'Right', fontWeight:"bold", fontSize:"1.1em"}
+        var lStyle = {fontWeight:"bold", fontSize:"1.1em"}
+        return(
+            <div className='row'>
+                <div style={lStyle} className='col-xs-12 col-md-6'>{params.companyName}<br/>{params.jobTitle}</div>
+                <div style={rStyle} className='col-md-6 d-none d-md-block'>{params.companyCityState}<br/>{params.jobDuration}</div> 
+            </div>
+        )
+    }
+
+    function Education(params){
+        return(
+            <div className="container">
+            <SectionHeading text="Education" />    
+            <Organization companyName="Western Michigan University" jobTitle="MA, Ph.D. Mathematics Education" companyCityState = "Kalamazoo, MI" jobDuration = "Fall, 2008 - Spring, 2014"/>
+            <TwoColumnList skillList={[ "Extensive graduate level Mathematics work",
+                                        "Presentations in Graph Theory and Probability/Statistics"]}/>
+            <Organization companyName="University of Maine at Farmington" jobTitle="BS, Mathematics Education" companyCityState = "Farmington, ME" jobDuration = "Fall, 2005 - Spring, 2008"/><br/>
+            <Organization companyName="University of Pennsylvania: EdX" jobTitle="Audit: Computer Science Essentials for Software Development Certificate" companyCityState = "Online" jobDuration = "Fall 2018-Spring 2019"/>
+            <TwoColumnList skillList={[ "Programming for the Web with JavaScript",
+                                        "Algorithm Design and Analysis",
+                                        "Data Structures and Software Design",
+                                        "Software Development Fundamentals"]}/>
+            <Organization companyName="Microsoft: EdX" jobTitle="Audit: Building Prototypes with JavaScript and Node.js Certificate" companyCityState = "Online" jobDuration = "Fall 2019 - Current"/>
+            <TwoColumnList skillList={[ "Introduction to ReactJS",
+                                        "Building Functional Prototypes using Node.js",
+                                        "Designing a Techincal Solution",
+                                        "Building Interactive Prototypes using JavaScript",
+                                        "Introduction to Bootstrap - A Tutorial"]}/>
+            <hr/>
+                                        
+            </div>
+        )
+    }
+
+    function Skills(params){
+        return(
+            <div className="container">
+            <SectionHeading text="Skills" />
+            <div className='row'>
+                <div className='col-md-6 col-lg-4 col-xl-3'><LeftFlushList type="Programming Languages" skillList = {["Java", "C#", "Swift"]}/></div>
+                <div className='col-md-6 col-lg-4 col-xl-3'><LeftFlushList type="Web Development" skillList = {["HTML / CSS / JavaScript", "Node.JS", "React", "Bootstrap", "RESTfull API"]}/></div>
+                <div className='col-md-6 col-lg-4 col-xl-3'><LeftFlushList type="Development Environments" skillList = {["Visual Studio Code", "Visual Studio", "Eclipse"]}/></div>
+                <div className='col-md-6 col-lg-4 col-xl-3'><LeftFlushList type="General" skillList = {["NoSQL Database Experience","Excellent Communicator", "Quick, Eager Learner", "Strong Problem Solver"]}/></div>
+            </div>
+            <hr/>
+        </div>
+        )
+    }
+
+
+    function Experience(params){
+        return(
+            <div className="container">
+                <SectionHeading text="Experience"/>
+                <Organization companyName="BAX Global" jobTitle="Data Entry Clerk" companyCityState = "Phoenix, AZ" jobDuration = "Summer, 2007"/>
+                <TwoColumnList skillList={[ "Database Data Entry",
+                                            "Communicating expectations to contractors",
+                                            "Maintaining lists of credentials",
+                                            "Organizing contractor files"]}/>
+                                          
+                <Organization companyName="ChoiceOne Bank" jobTitle="Commercial Loans Assistant" companyCityState = "Sparta, MI" jobDuration = "Summer, 2008"/>
+                <TwoColumnList skillList={[ "Created an Access database for customer information",
+                                            "Designed and Implemented forms to user specifications",
+                                            "Helped management understand affordances and limitations",
+                                            "Worked independantly to achieve goals",
+                                            "Taught myself MS Access and implemented a large product in under six months"]}/>
+                
+                <Organization companyName="Western Michigan University - Mathematics" jobTitle="Graduate Assistant" companyCityState = "Kalamazoo, MI" jobDuration = "Fall, 2008 - Spring, 2014"/>
+                <TwoColumnList skillList={[ "Taught undergraduate Mathematics classes",
+                                            "Helped design High School textbook",
+                                            "Designed and delivered professional development"]}/>
+                <Organization companyName="University of New Haven" jobTitle="Assistant Professor - Mathematics" companyCityState = "West Haven, CT" jobDuration = "Spring, 2014 - Fall, 2016"/>
+                <TwoColumnList skillList={[ "Taught undergraduate and graduate Mathematics classes",
+                                            "Taught Mathematics courses designed for Computer Science majors",
+                                            "Served on several university committees",
+                                            "Taught technology course for undergraduate teachers",
+                                            "Taught digital media literacy for sixth-year program"]}/>
+                <Organization companyName="Wilbur Cross High School" jobTitle="Mathematics Teacher" companyCityState = "New Haven, CT" jobDuration = "Fall, 2016 - Current"/>
+                <TwoColumnList skillList={[ "Taught Mathematics courses",
+                                            "Set up Mac lab for dual OS using BootCamp",
+                                            "Helped maintain and troubleshoot classroom hardware and software",
+                                            "Assisted as tech support while school searched to replace IT personell"]}/>
+                <hr/>
+            </div>
+        )
+    }
+
+    ReactDOM.render(
+        <div>
+        <Header />
+        <Menu />
+        <Skills />
+        <Education />
+        <Experience />
+        </div>,
+        document.getElementById('root')
+    )
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
