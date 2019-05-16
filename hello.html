@@ -86,7 +86,7 @@
                                         "Algorithm Design and Analysis",
                                         "Data Structures and Software Design",
                                         "Software Development Fundamentals"]}/>
-            <Organization companyName="Microsoft: EdX" jobTitle="Audit: Building Prototypes with JavaScript and Node.js Certificate" companyCityState = "Online" jobDuration = "Fall 2019 - Current"/>
+            <Organization companyName="Microsoft: EdX" jobTitle="Audit: Building Prototypes with JavaScript and Node.js Certificate" companyCityState = "Online" jobDuration = "Fall 2018 - Current"/>
             <TwoColumnList skillList={[ "Introduction to ReactJS",
                                         "Building Functional Prototypes using Node.js",
                                         "Designing a Techincal Solution",
@@ -103,10 +103,10 @@
             <div className="container">
             <SectionHeading text="Skills" />
             <div className='row'>
-                <div className='col-md-6 col-lg-4 col-xl-3'><LeftFlushList type="Programming Languages" skillList = {["Java", "C#", "Swift"]}/></div>
-                <div className='col-md-6 col-lg-4 col-xl-3'><LeftFlushList type="Web Development" skillList = {["HTML / CSS / JavaScript", "Node.JS", "React", "Bootstrap", "RESTfull API"]}/></div>
-                <div className='col-md-6 col-lg-4 col-xl-3'><LeftFlushList type="Development Environments" skillList = {["Visual Studio Code", "Visual Studio", "Eclipse"]}/></div>
-                <div className='col-md-6 col-lg-4 col-xl-3'><LeftFlushList type="General" skillList = {["NoSQL Database Experience","Excellent Communicator", "Quick, Eager Learner", "Strong Problem Solver"]}/></div>
+                <div className='col-md-6 col-lg-4 col-xl-3'><LeftFlushList type="Programming Languages" skillList = {["Java", "C#", "Swift", "HTML / CSS / JavaScript"]}/></div>
+                <div className='col-md-6 col-lg-4 col-xl-3'><LeftFlushList type="Web Development" skillList = {["Node.JS", "React", "Bootstrap", "RESTfull API"]}/></div>
+                <div className='col-md-6 col-lg-4 col-xl-3'><LeftFlushList type="Development Environments" skillList = {["Visual Studio Code", "Visual Studio", "Eclipse", "XCode"]}/></div>
+                <div className='col-md-6 col-lg-4 col-xl-3'><LeftFlushList type="General" skillList = {["Git / GitHub","NoSQL Database", "SQL Database", "MS Office Suite"]}/></div>
             </div>
             <hr/>
         </div>
@@ -125,16 +125,16 @@
                                             "Organizing contractor files"]}/>
                                           
                 <Organization companyName="ChoiceOne Bank" jobTitle="Commercial Loans Assistant" companyCityState = "Sparta, MI" jobDuration = "Summer, 2008"/>
-                <TwoColumnList skillList={[ "Created an Access database for customer information",
-                                            "Designed and Implemented forms to user specifications",
-                                            "Helped management understand affordances and limitations",
-                                            "Worked independantly to achieve goals",
-                                            "Taught myself MS Access and implemented a large product in under six months"]}/>
+                <TwoColumnList skillList={[ "Created an Access database to track commercial loans customers' materials and compliance",
+                                            "Designed and Implemented forms to match existing products being used by account managers",
+                                            "Migrated data to new database",
+                                            "Designed interface to be broadly accessible"]}/>
                 
                 <Organization companyName="Western Michigan University - Mathematics" jobTitle="Graduate Assistant" companyCityState = "Kalamazoo, MI" jobDuration = "Fall, 2008 - Spring, 2014"/>
-                <TwoColumnList skillList={[ "Taught undergraduate Mathematics classes",
-                                            "Helped design High School textbook",
-                                            "Designed and delivered professional development"]}/>
+                <TwoColumnList skillList={[ "Assisted faculty with the design and implementation of distance-learning for professional development",
+                                            "Performed data analysis on large collections of data using R, SPSS, and Excell",
+                                            "Used type-setting program LaTex to prepare technical documents for publication",
+                                            "Designed and executed preojects in computational mathematics using MatLab and Maple"]}/>
                 <Organization companyName="University of New Haven" jobTitle="Assistant Professor - Mathematics" companyCityState = "West Haven, CT" jobDuration = "Spring, 2014 - Fall, 2016"/>
                 <TwoColumnList skillList={[ "Taught undergraduate and graduate Mathematics classes",
                                             "Taught Mathematics courses designed for Computer Science majors",
@@ -142,10 +142,11 @@
                                             "Taught technology course for undergraduate teachers",
                                             "Taught digital media literacy for sixth-year program"]}/>
                 <Organization companyName="Wilbur Cross High School" jobTitle="Mathematics Teacher" companyCityState = "New Haven, CT" jobDuration = "Fall, 2016 - Current"/>
-                <TwoColumnList skillList={[ "Taught Mathematics courses",
+                <TwoColumnList skillList={[ "Worked on software solutions to classroom management issues, an iOS app and a feature-rich spreadsheet",
                                             "Set up Mac lab for dual OS using BootCamp",
                                             "Helped maintain and troubleshoot classroom hardware and software",
-                                            "Assisted as tech support while school searched to replace IT personell"]}/>
+                                            "Assisted as tech support while school searched to replace IT personell",
+                                            "Managed the schools ALEKS online learning"]}/>
                 <hr/>
             </div>
         )
@@ -156,8 +157,9 @@
         <Header />
         <Menu />
         <Skills />
-        <Education />
         <Experience />
+        <Education />
+        <Footer />
         </div>,
         document.getElementById('root')
     )

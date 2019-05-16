@@ -12,7 +12,17 @@ function Header() {
         </div>
     )
 }
-
+function Footer(){
+    var style = {
+        textAlign:"center", 
+        height:"35px", 
+        backgroundColor:"grey",
+        fontSize:"1em"
+    }
+    return(
+    <div style={style}>joshuamgoss@aol.com | <a href="http://www.linkedin.com/in/joshua-goss" target="_black">LinkedIn profile</a> | <a target="-blank" href="http://www.github.com/joshuamgoss">GitHub </a></div>
+    )
+}
 function Menu() {
     var style = { height: '20px' }
     return (
@@ -30,9 +40,10 @@ function Menu() {
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resume Section Details</a>
                         <div className="dropdown-menu" aria-labelledby="dropdownId">
-                            <a className="dropdown-item" href="\experience.html">Experience</a>
                             <a className="dropdown-item" href="\skills.html">Skills</a>
                             <a className="dropdown-item" href="\education.html">Education</a>
+                            <a className="dropdown-item" href="\experience.html">Experience</a>
+                            <a className="dropdown-item" href="\joshgossresume.pdf">Resume PDF</a>
                         </div>
                     </li>
                 </ul>
