@@ -16,46 +16,52 @@
 <body>
     <div id="root"></div>
     <div class="container">
-    <h1>Experience</h1>
-    A consistent thread through my career has been incorporating technology.  For two summers in a row 
-    I ended up working with databases, and for the next several years incorporating several technologies
-    and languages in my work as a research assistant.  I've been running an after school club that required 
-    managing dual OS installations and drive partitions across 27 machines, and have been helping fill 
-    in while the school looks for a new IT person.<br/><br/>
-    <h3>Summer Work</h3>
-    I worked for one summer at a logistics firm called BAX in their Phoenix office, specifically with the group that coordinated 
-    with contractors that handled international freight arriving or departing by air.  My primary role was 
-    maintaining both physical and digital records on the contractors' certifications, contract compliance, and 
-    a number of other things. Most of what I did was updating a pre-established database and generating reports 
-    for other members of the team.<br/>
-    The next summer I worked for the consumer loans section of a regional bank in Michigan.  They had been 
-    maintaining all of their files physically, and as the bank grew it was becoming problematic.  I mentioned 
-    that I had worked with databases the previous year and they asked me to build something for them.  To that 
-    point I had never even attempted something like that, but I agreed to try.  I was able to build everything 
-    they needed including putting all of their form letters and internal reports together and splitting the
-    back end from the front end.  After I left they hired someone with more expertise and she ended up rebuilding
-    it a bit to make it more scalable and efficient.<br/><br/>
-    <h3>Western Michigan University</h3>
-    At WMU through coursework I worked a bit with R, MatLab, Maple, and LaTex.  Most of that was for courses
-    and amounted to five or six weeks of using the basic functionality.  The main pieces of technology that I 
-    used more extensively were SPSS during the two larger research projects I was involved in, and the presentation 
-    software that the University used to make distance learning modules.<br/><br/>
-    <h3>University of New Haven</h3>
-    At UNH I taught the Discreet Mathematics for Computer Sciences class, and incorporated some basic programming
-    tasks, particularly around big O notation and when looking at the relevance of formal logic and graph theory, 
-    to computer programing.  I also taught in a 6th year program in digital media literacy for in-service teachers.<br/><br/>
-    <h3>Wilbur Cross High School</h3>
-    At Wilbur Cross High School I began working with our excellent computer science teacher to support her 
-    teaching of Advanced Video Game Design and AP Computer Science.  Initialy it was mainly helping figure out and 
-    plan the more mathematics-intensive pieces of the course (e.g. certain topics in vector/matrix arithmetic and rigid body motion). 
-    As I've learned more I have become more involved in helping troubleshoot/debug demonstration pieces, student code,
-    and picking apart online examples.  <br/><br/>
-    For a little over the last year I have also been the facutly sponsor for the eSports club, which required 
-    us to create and manage bootcamp partitions for one of the Mac Labs.  When people realized I was good at that 
-    sort of thing I began helping out more and more with tech issues as they came up in my Academy.  When our IT person 
-    left for another job earlier this year I began taking a more active roll in helping pick up the slack.<br/><br/>
+        <h1>Experience</h1>
+        A consistent thread through my career has been incorporating technology. For two summers in a row
+        I ended up working with databases, and for the next several years incorporating several technologies
+        and languages in my work as a research assistant. I've been running an after school club that required
+        managing dual OS installations and drive partitions across 27 machines, and have been helping fill
+        in while the school looks for a new IT person.<br /><br />
+        <h3>Summer Work</h3>
+        I worked for one summer at a logistics firm called BAX in their Phoenix office, specifically with the group that
+        coordinated
+        with contractors that handled international freight arriving or departing by air. My primary role was
+        maintaining both physical and digital records on the contractors' certifications, contract compliance, and
+        a number of other things. Most of what I did was updating a pre-established database and generating reports
+        for other members of the team.<br />
+        The next summer I worked for the consumer loans section of a regional bank in Michigan. They had been
+        maintaining all of their files physically, and as the bank grew it was becoming problematic. I mentioned
+        that I had worked with databases the previous year and they asked me to build something for them. To that
+        point I had never even attempted something like that, but I agreed to try. I was able to build everything
+        they needed including putting all of their form letters and internal reports together and splitting the
+        back end from the front end. After I left they hired someone with more expertise and she ended up rebuilding
+        it a bit to make it more scalable and efficient.<br /><br />
+        <h3>Western Michigan University</h3>
+        At WMU through coursework I worked a bit with R, MatLab, Maple, and LaTex. Most of that was for courses
+        and amounted to five or six weeks of using the basic functionality. The main pieces of technology that I
+        used more extensively were SPSS during the two larger research projects I was involved in, and the presentation
+        software that the University used to make distance learning modules.<br /><br />
+        <h3>University of New Haven</h3>
+        At UNH I taught the Discreet Mathematics for Computer Sciences class, and incorporated some basic programming
+        tasks, particularly around big O notation and when looking at the relevance of formal logic and graph theory,
+        to computer programing. I also taught in a 6th year program in digital media literacy for in-service
+        teachers.<br /><br />
+        <h3>Wilbur Cross High School</h3>
+        At Wilbur Cross High School I began working with our excellent computer science teacher to support her
+        teaching of Advanced Video Game Design and AP Computer Science. Initialy it was mainly helping figure out and
+        plan the more mathematics-intensive pieces of the course (e.g. certain topics in vector/matrix arithmetic and
+        rigid body motion).
+        As I've learned more I have become more involved in helping troubleshoot/debug demonstration pieces, student
+        code,
+        and picking apart online examples. <br /><br />
+        For a little over the last year I have also been the facutly sponsor for the eSports club, which required
+        us to create and manage bootcamp partitions for one of the Mac Labs. When people realized I was good at that
+        sort of thing I began helping out more and more with tech issues as they came up in my Academy. When our IT
+        person
+        left for another job earlier this year I began taking a more active roll in helping pick up the
+        slack.<br /><br />
     </div>
-
+    <div id="foot"></div>
     <script type="text/babel">
 
 
@@ -65,6 +71,13 @@
         <Menu />
         </div>,
         document.getElementById('root')
+    )
+
+    ReactDOM.render(
+        <div>
+        <Footer />
+        </div>,
+        document.getElementById('foot')
     )
     </script>
 

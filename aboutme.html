@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>About Me</title>
+    <script type='text/babel' src='/skilldata.js'></script>
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <script src="https://unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.js"></script>
+    <script type="text/babel" src="consistentelements.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <div class="container">
+        <h2>About me</h2>
+        <p>I wrote my first ‘Hello World’ in the late ‘80s on a Tandy 1000. My whole family became obsessed. I remember
+            my mom actually having to put a cap on the number of those little ‘cookbook’ style learn-to-code books that
+            we could check out from the library, and the bargains we made to try and get a few extra. Since then,
+            technology and the need to teach myself have been constant threads in my life.</p>
+
+        <p>We moved around a lot, and a series of small rural schools without internet and fewer than a dozen computers
+            in the building made it difficult to find opportunities to learn more. I still learned what I could. I would
+            type assignments when I could, I would figure out how to put small algorithms together to ‘check’ my math
+            homework, and I would use our barely-there dial-up connection to try and learn more.</p>
+
+        <p>In the Marine Corps I worked as a fire support man in an artillery company. I was one of two that could get
+            the computer-based indirect fire coordination system to work, took every opportunity to get the
+            range-finding and laser designating systems out to the field, helped troubleshoot communications equipment,
+            and even digitized the scheduled calls for fire for the larger joint exercises.</p>
+
+        <p>During my undergraduate studies I often found technical work in the summer. I worked two summers on
+            databases, mainly doing data entry the first summer, but the second summer putting a new database together.
+            In that second year I worked for a bank for the first time, for a commercial loans department about which I
+            knew nothing, building a database with all the related forms and reports which I had never studied or
+            attempted. In the space of a few months, while splitting my time between the commercial loans department and
+            filling in for a collections clerk that left unexpectedly, I taught myself what I needed to know to put it
+            all together. I learned enough about how databases worked, built the table structures and relationships,
+            split off the front end, built the forms for data entry, built the reports they needed, and built and
+            scheduled monthly client letters. I did all this without taking a class, without having a more experienced
+            person to consult, and without even an existing database to model mind from.</p>
+
+        <p>In grad school I started out in a grant program to deliver professional development to math teachers in rural
+            Michigan. The grant funds were cut back and the renewal stipulated that they needed to shift to distance
+            learning, and they had no idea how to proceed. I started by reviewing existing platforms to see if there was
+            something in place we could implement. Due to the technology available at the time, and the state of
+            internet access in rural areas, an online only solution was not reasonable. We ended up putting together a
+            mix of a few technologies that we used to create modules that could distribute using physical media. We had
+            to make sure it ran on a variety of equipment and that it was user-friendly for the local teacher-leaders
+            that would deliver the PD to small groups at the schools. This also allowed for the opportunity of having
+            professors design learning opportunities for the teachers, but required us to coordinate and assist the
+            faculty members in designing their modules. As there were only four of us on the grant – a professor emeriti
+            with very limited knowledge of the technology, an administrative assistant, a curriculum focused graduate
+            assistant, and myself – the bulk of the work coordinating with faculty, facilitating their work, and
+            assisting with the more technical aspects fell to me.</p>
+
+        <p>In working with the faculty members from a wide range of specialties, I wound up being exposed to a variety
+            of different disciplines and the technologies specific to them. In particular I ended up with a solid
+            background in R, SPSS, MatLab, and Maple before they came up in the graduate curriculum. With my background
+            I was able to excel in the computational mathematics, probability, and statistics coursework and was asked
+            to help in a separate grant program working on the assessment team collecting and analyzing implementation
+            data on a textbook that was being developed. </p>
+
+        <p>As an Assistant Professor of Mathematics and Mathematics Education at the University of New Haven (UNH) I was
+            asked to teach the Discreet Mathematics courses for Computer Science majors due to my background in graph
+            theory, probability/statistics, propositional logic, and computer programming. In teaching that class I
+            learned a fair bit of python to use in student exercises, as that is what they were using in the
+            concurrently enrolled CSCI course. I also ended up teaching in the Digital Media Literacy graduate program
+            for one summer.</p>
+
+        <p>Since then I have taught myself C# and the Unity engine in order to help with a course at Wilbur Cross and to
+            work on hobby projects. I taught myself Swift and used that with XCode to begin work on a classroom
+            management app, and shifted to working on Java when I became serious about making the career change to
+            software development. I learned JavaScript/HTML/CSS to put together my website (which originally included a
+            MongoDB NoSQL database, but were stripped out when I chose to host on AWS’s S3 environment), which also uses
+            Bootstrap and React to make the code more modular and present a user-friendly environment on various screen
+            sizes.</p>
+    </div>
+    <div class="container">
+        <h2>Current Project</h2>
+        <p>Right now I am working on learning ASP.net Core. I am going to use a sample database that was a part of a
+            TSQL course to make a mock-eCommerce website.</p>
+
+        <p>In terms of getting the ‘bones’ of it all set up, it has been fairly straightforward. EF Core makes
+            connecting the back end and front end fairly straightforward. I am using a database with only five
+            tables. I wrote the data model classes, and then simply scaffolded the CRUD pages.</p>
+
+        <p>I have been reading about how some people prefer to put the services in a separate class’ static
+            method then call that in ConfigureServices (and another for the Configure method) to be ready for
+            use as Dependency Injections (DIs). I definitely see how this would be advantageous in larger
+            projects. The startup file gets a little long and crowded if you end up using a large number of
+            services, and it gives you separate spaces that can focus on single purposes. It also makes it so
+            that you can’t inadvertently mess up your services if you’re working on the HTTP request pipeline.
+            My thought is that I will do this for ConfigureServices, but leave Configure’s code in Setup.cs. I
+            very much like the idea of having all the services in their own dedicated area, but I don’t know
+            enough about the overhead in moving the HTTP request pipeline out of that file, and I need to do a
+            little more studying before I’m comfortable making a decision to move it.</p>
+
+        <p>I have a lot to do with the scaffolded CRUD pages. They are a nice starting point, but there are
+            several things that could certainly be done better. For instance, setting up a new customer and
+            inputting their address should all be one page, but the scaffolding process put those
+            separately. Things like that need to be addressed. It is giving me a lot of practice with
+            dependency injections and the async/wait pattern, though, which is great.</p>
+
+    </div>
+
+
+    <script type="text/babel">
+
+
+    ReactDOM.render(
+    <div>
+    <Header />
+    <Menu />
+    <SkillPanes skillItems = {skills} />
+    </div>,
+    document.getElementById('root')
+    )
+    </script>
+
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+
+</html>

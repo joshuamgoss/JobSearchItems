@@ -55,7 +55,7 @@
             has a bit of a learning curve, and I believe that my unique background will help me get up to speed quickly. 
             <br/><br/><br/>      
         </div>
-
+        <div id="foot"></div>
 
     <script type="text/babel">
 
@@ -65,7 +65,13 @@
         <Header />
         <Menu />
         </div>,
-        document.getElementById('root')
+        document.getElementById('root') 
+    )
+    ReactDOM.render(
+        <div>
+        <Footer />
+        </div>,
+        document.getElementById('foot')
     )
     </script>
 
